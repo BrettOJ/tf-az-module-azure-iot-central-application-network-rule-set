@@ -7,8 +7,10 @@ variable "iotcentral_application_id" {
 variable "ip_rules" {
   description = "A list of IP rules for the IoT Central Application Network Rule Set."
   type        = list(object({
-    name    = string
-    ip_mask = string
+    iprule = object({
+        name = string
+        ip_mask = string
+    })
   }))
   default     = null
 }
